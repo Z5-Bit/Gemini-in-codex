@@ -1,7 +1,12 @@
-# 授权与第三方来源
+## 授权与第三方来源
 
-这套发布材料没有替仓库所有者选择或授予新增代码的开源许可。上传 GitHub、公开可见和授予 MIT/Apache 等许可是不同的操作。若希望他人自由修改和再分发，请在确认代码权利与上游条件后选择合适许可，再添加正式 LICENSE；署名可使用公开昵称，不需要真实姓名或个人邮箱。
+本项目（**Gemini-in-codex**）由 **Z5-Bit** 维护，仓库中包含的新增代码与第三方组件按以下规则分别授权：
 
-第三方代码与运行时保留各自原有许可和声明。不要用新建的顶层 LICENSE 覆盖第三方权利。仓库中的 THIRD-PARTY-NOTICES.md 列明来源；便携包保留依赖自身的 LICENSE/NOTICE。
+1. **新增与修改代码的开源许可**  
+   除明确标注的第三方代码外，本仓库中新增的源代码、脚本与配置均采用 **GNU General Public License v3.0 (GPL-3.0)** 开源许可证授权（完整协议文本见根目录下的 [LICENSE](./LICENSE) 文件）。  
+   *注：将本工具作为本地独立服务/接入层运行以供 Codex 调用，不会对您所编写的业务代码产生任何开源协议传染。*
 
-参考：https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository
+2. **第三方代码与运行时声明**  
+   本项目包含或引用的第三方代码与运行时均完整保留各自原有的开源许可和版权声明，根目录的 `LICENSE` 仅适用于本项目新增代码，不覆盖任何第三方权利。  
+   - 详细的第三方来源与协议清单请参阅仓库中的 [THIRD-PARTY-NOTICES.md](./THIRD-PARTY-NOTICES.md)。  
+   - 发布的便携包（如有）内均保留了各依赖项自身的 `LICENSE` 与 `NOTICE` 文件。
