@@ -1,0 +1,15 @@
+{
+  "host": "127.0.0.1",
+  "port": 18161,
+  "location": "global",
+  "default_model": "gemini-4-argon",
+  "models": [
+    "gemini-4-argon",
+    "gemini-3.8-flash"
+  ],
+  "max_output_tokens": 32768,
+  "timeout_seconds": 600,
+  "max_request_bytes": 134217728,
+  "thought_summaries": true,
+  "allow_foreign_history": true
+}

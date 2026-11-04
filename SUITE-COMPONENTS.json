@@ -1,0 +1,215 @@
+{
+  "suite_version": "0.3",
+  "variant": "combined",
+  "installation_id": "0.3-combined",
+  "components": {
+    "google_only": {
+      "source": "0.3.3",
+      "core_version": "0.1.5",
+      "deadline_seconds": 600,
+      "files_modified": true,
+      "recovery_patch": "429-retry-3-6",
+      "modified_files": [
+        "gateway/manage.py",
+        "gateway/server.py"
+      ]
+    },
+    "mixed": {
+      "source": "0.3.0-timeout600",
+      "core_version": "0.2.3-mixed",
+      "deadline_seconds": 600,
+      "files_modified": true,
+      "recovery_patch": "429-retry-3-6",
+      "modified_files": [
+        "gateway_mixed/manage.py",
+        "gateway_mixed/server.py",
+        "gateway_mixed/vertex_server.py"
+      ]
+    },
+    "mode_coordinator": {
+      "source": "0.3.3",
+      "route_sync_for_all_modes": true
+    }
+  },
+  "source_archives": {
+    "0.3.3": {
+      "archive": "MultiGoogleCloud-Codex-0.3.3-windows-x64.zip",
+      "sha256": "b1baf09e71b1e707215a018e651bf2e3e365a53a1d74996878a2516a60fa3161"
+    },
+    "0.3.0-timeout600": {
+      "archive": "MultiGoogleCloud-Codex-0.3.0-timeout600-windows-x64.zip",
+      "sha256": "3f4d98a400dbc3fc5eadcdf8e7a6bbf475e80ca0e9879f1c3703b2ba5cbfd1c3"
+    }
+  },
+  "component_files": {
+    "gateway/adapter.py": {
+      "source": "0.3.3",
+      "sha256": "7be1d4a6eb4d94015c653e7510af57948cea7182eaf43bd8582cd739089cde56"
+    },
+    "gateway/bootstrap.py": {
+      "source": "0.3.3",
+      "sha256": "ef2cf246ce966e19d8a941a270ba74cd1a3b7a85890b77f1c563193f1eccb15e"
+    },
+    "gateway/build_catalog.py": {
+      "source": "0.3.3",
+      "sha256": "9bece602c0a5948beb90365fc45607088c1ec0a9f43689b20edcd7cfe35bd070"
+    },
+    "gateway/configure.py": {
+      "source": "0.3.3",
+      "sha256": "9ae5e024f4f6fc0e8c2e49ba18239f5ccd7abaadeea1cecc83f3c3e349bef51a"
+    },
+    "gateway/manage.py": {
+      "source": "0.3.3",
+      "sha256": "d33e46973a623520a706ae7b0ab4ab454f1495ac026b8ca8bf34e5d6cb7ff242",
+      "source_sha256": "52f5dad3d80e6fc372aa5f87d91e9b66136105ef52e10e1fdd97f92fc7fa9a94",
+      "patch": "429-retry-3-6"
+    },
+    "gateway/mode.py": {
+      "source": "0.3.3",
+      "sha256": "c73cdbc0f7f52ae213cabc1359bdcf26da3f1a6f006b0b1a0bdfa764dcc82bf4"
+    },
+    "gateway/models.json": {
+      "source": "0.3.3",
+      "sha256": "1a5f839d36bdf9fd33db7b31098c7a36be15d047dbcc2c0ea446990a4754fb2b"
+    },
+    "gateway/Open-Google-Codex.cmd": {
+      "source": "0.3.3",
+      "sha256": "ff4ad94fc7829e8ae5d6ccdc1fc2b07c4575c751076eb34b9ad216c074639ecf"
+    },
+    "gateway/Open-Original-Codex.cmd": {
+      "source": "0.3.3",
+      "sha256": "8c9250f27edfadf695c885e28c04d74fcd87a1870af17a09db159783763b9a6c"
+    },
+    "gateway/request_body.py": {
+      "source": "0.3.3",
+      "sha256": "2a2d714fb17151162b6ba578809c8e0cab0203423241f3e131e43b12999b3f0f"
+    },
+    "gateway/Restore-Codex-Models.cmd": {
+      "source": "0.3.3",
+      "sha256": "8f123ef82c135f7298c6df66bfd2b857b5a358ea028060f73349a02ca9520a8a"
+    },
+    "gateway/Run-Gateway-Command.cmd": {
+      "source": "0.3.3",
+      "sha256": "95b7e5e15053868cab22cddc0834332a158b9760f5d2abd6fd66408808fd775e"
+    },
+    "gateway/server.py": {
+      "source": "0.3.3",
+      "sha256": "dba99a71455648ef4641a1ba04625736ab79e22ae5655f2221df034750fcc27b",
+      "source_sha256": "426d7ad5cf628fe3e9812078f41e1ce2ca3783c5caafda43894387fe9837775d",
+      "patch": "429-retry-3-6"
+    },
+    "gateway/settings.json": {
+      "source": "0.3.3",
+      "sha256": "559864eb0cc8bc3ca2501fd4e5269e716d099bc2decf203f7ffb3568f02792c8"
+    },
+    "gateway/state.py": {
+      "source": "0.3.3",
+      "sha256": "8011e28162521c21e54068c1bfb67c3bcccc2c67c451a5d1aa65df24878fd344"
+    },
+    "src/mgc/codex_open.py": {
+      "source": "0.3.3",
+      "sha256": "7e8f4bd155fcf6824d234d730eb3a058841a419336171a89fa4cb6024289f7fa"
+    },
+    "src/mgc/codex_routes.py": {
+      "source": "0.3.3",
+      "sha256": "26da6642d8f3dbc59a9cfa5a7bcb2565e8d2752b33bb7f294267a069492f62bd"
+    },
+    "src/mgc/paths.py": {
+      "source": "0.3.3",
+      "sha256": "cd4c8ab9bfd9c4ec6c1ba7bae3d366cb1761aacf26828a885ee16e280ba24005"
+    },
+    "src/mgc/vault.py": {
+      "source": "0.3.3",
+      "sha256": "b1a57df827db2e82d8951c27a68f6a65014fb8d01ae22422f915f643c8f8a197"
+    },
+    "gateway_mixed/Open-Mixed-Codex.cmd": {
+      "source": "0.3.0-timeout600",
+      "sha256": "ff4ad94fc7829e8ae5d6ccdc1fc2b07c4575c751076eb34b9ad216c074639ecf"
+    },
+    "gateway_mixed/Open-Original-Codex.cmd": {
+      "source": "0.3.0-timeout600",
+      "sha256": "8c9250f27edfadf695c885e28c04d74fcd87a1870af17a09db159783763b9a6c"
+    },
+    "gateway_mixed/Restore-Codex-Models.cmd": {
+      "source": "0.3.0-timeout600",
+      "sha256": "8f123ef82c135f7298c6df66bfd2b857b5a358ea028060f73349a02ca9520a8a"
+    },
+    "gateway_mixed/Run-Gateway-Command.cmd": {
+      "source": "0.3.0-timeout600",
+      "sha256": "95b7e5e15053868cab22cddc0834332a158b9760f5d2abd6fd66408808fd775e"
+    },
+    "gateway_mixed/adapter.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "7b9e531fbb5924b8df10a17690ddd0de6c4cbd918ae72bed17974afe86467f38"
+    },
+    "gateway_mixed/bootstrap.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "ef2cf246ce966e19d8a941a270ba74cd1a3b7a85890b77f1c563193f1eccb15e"
+    },
+    "gateway_mixed/build_catalog.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "9bece602c0a5948beb90365fc45607088c1ec0a9f43689b20edcd7cfe35bd070"
+    },
+    "gateway_mixed/catalog.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "af3bebc48aaf389353bfcda6c9c4373ced81de9cb0c3f2159915327876528315"
+    },
+    "gateway_mixed/configure.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "b4b5045d228b75c7c6f8f80d5a2e06065f126126cc8a68fb73e425170977ef2d"
+    },
+    "gateway_mixed/manage.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "1ada01b411e54f6604fe326ae4713486f68afb7609dfe3dccea7dbe10bdc2899",
+      "source_sha256": "8560799c6204671196fe1aaa5c8baf0a08c161b0f71c6df8d0c52e513c7c4d67",
+      "patch": "429-retry-3-6"
+    },
+    "gateway_mixed/mode.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "486b423ef372f9b20b71f62c811a827ad9d0f84470a8a429530d944c2aab96e7"
+    },
+    "gateway_mixed/models.json": {
+      "source": "0.3.0-timeout600",
+      "sha256": "b5471cad3a0e6dd1065ba234ad2f06d23bdf2ea634aa3f65a23f94e6ebd673a4"
+    },
+    "gateway_mixed/request_body.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "2a2d714fb17151162b6ba578809c8e0cab0203423241f3e131e43b12999b3f0f"
+    },
+    "gateway_mixed/server.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "75222b7edce5adaef27a8a26a3ca8b962d771fcb386e978c83e7fde693ef2434",
+      "source_sha256": "51cab57d085f03f9cf6feeced0291955ffdfc3ad33d3ba30798b7eb2481223f5",
+      "patch": "429-retry-3-6"
+    },
+    "gateway_mixed/settings.json": {
+      "source": "0.3.0-timeout600",
+      "sha256": "b71be49ee8714cc65c54326f8287869a03d2a0ad26e9bd4fc8dea8e53b5b9181"
+    },
+    "gateway_mixed/state.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "4029a2eab5a7cb2949938a51d07802a77813622c065bbc2715b58930ab4d883f"
+    },
+    "gateway_mixed/vertex_server.py": {
+      "source": "0.3.0-timeout600",
+      "sha256": "7961250a97b254e982425669ac1277306d688ad6c17d61f51e809bb11af3d252",
+      "source_sha256": "e794bd334eded3bb4aa69bf6ade9dc19085550cac658d1e75ac39cb36ae58b7f",
+      "patch": "429-retry-3-6"
+    }
+  },
+  "recovery_patch": {
+    "id": "429-retry-3-6",
+    "date": "2026-11-03",
+    "google_retry_delays_seconds": [
+      3,
+      6
+    ],
+    "max_attempts": 3,
+    "only_before_first_upstream_chunk": true,
+    "other_errors_replayed": false,
+    "google_deadline_seconds": 600,
+    "google_socket_read_seconds": 630,
+    "mixed_gpt_read_seconds": 660,
+    "auth_history_model_parameters_changed": false
+  }
+}
