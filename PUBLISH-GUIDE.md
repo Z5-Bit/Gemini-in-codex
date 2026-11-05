@@ -1,42 +1,47 @@
-# MultiGoogleCloud Codex Portable GitHub 发布步骤
+# Gemini-in-codex：补充许可与更新已有 GitHub 仓库
 
-建议仓库名：`multigooglecloud-codex-portable`；首次 Release 标签：`v0.3`。
+实际仓库：https://github.com/Z5-Bit/Gemini-in-codex
 
-## 文件分工
+许可：**GPL-3.0-only**。本次是 `license.1` 发布材料修订，建议新标签 `v0.3-license.1`；原功能版本和旧标签保持不变。
 
-- `repository`：只把这个目录内的文件放到仓库根目录。它是干净源码，不含旧 Git 历史、运行数据或第三方运行环境。
-- `release-assets`：把其中的 Windows ZIP 与 SHA256 文件上传到 GitHub Release 的附件区，不要提交到源码仓库。
-- `publish-text`：仓库简介、发布标题与 Release 正文，可直接复制。
-- Source ZIP 是 `repository` 的备用副本；不要把 ZIP 本身当作仓库源码上传。
+## 第一步：更新现有 main
 
-## 推荐操作
+只把本材料的 `repository/` 内文件放到现有仓库根目录，保留远端现有提交历史。不要重新运行首次发布用的 `tools/Prepare-Git.ps1`，也不要 force push。
 
-1. 登录自己的 GitHub。先在 Settings → Emails 找到 GitHub 提供的 noreply 邮箱并启用邮箱隐私选项；提交作者使用公开昵称。不要将本机原工作区的 `.git` 拷过来。
-2. 点击 New repository，填写 `multigooglecloud-codex-portable`。建议先选 Private 做最后预览；需要公开时再改 Public。不要勾选自动 README、gitignore 或 License，以免和已准备内容冲突。
-3. 只进入本发布材料的 `repository`。运行 `tools/Check-Publish.ps1`，应显示 PASS。它核对审核后的文件哈希；如文件变化，先检查变化再重新整理，不要无条件跳过。
-4. 如果有 Git，运行以下脚本创建全新的本地首次提交。邮箱应替换为你的 GitHub noreply 地址，不要使用个人邮箱。脚本不会上传：
+本地若已由本次整理建立 origin/main 基线并暂存更新，可在 `repository/` 中执行：
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Prepare-Git.ps1 -PublicName "你的公开昵称" -NoReplyEmail "GitHub给你的地址@users.noreply.github.com"
-git status
-git log -1 --format=fuller
-git remote add origin https://github.com/YOUR_USERNAME/multigooglecloud-codex-portable.git
-git push -u origin main
+git status --short
+git diff --cached --stat
+git config --local user.name "Z5-Bit"
+git config --local user.email "你的GitHub提供的noreply地址@users.noreply.github.com"
+git commit -m "Add project license, third-party notices and missing publication files"
+git push origin main
 ```
 
-最后两行由你填写新仓库地址后执行。使用 Git 自己的登录/凭证管理流程；不要把 Token 拼进 URL、脚本或聊天。脚本只添加审核清单中的文件，不使用 `git add .`。
+把示例邮箱改为 GitHub Settings → Emails 显示的 noreply 地址；使用 Git 自己的登录流程，不把令牌放进命令。若未准备 Git，可先克隆上述已有仓库，再按 PUBLISH-MANIFEST.json 复制审核文件；或使用 GitHub Desktop 的 Add local repository 导入已经准备好的目录。
 
-没有 Git 也可以在仓库页面使用 Add file → Upload files，分批上传 `repository` 内的文件和目录；包括以点开头的 `.github`、`.agents`（存在时）、`.gitignore`、`.gitattributes`。不要上传原始软件目录、source ZIP、release-assets 或整个发布总目录。
+务必包含 `.gitignore`、`.gitattributes`、`.github/`；插件项目另须包含 `.agents/` 与 `plugins/*/.codex-plugin/`。网页手工上传曾遗漏这些文件，不能只看普通文件已出现就视为完整。
 
-5. 查看 GitHub 文件列表和 Actions 检查。确认没有 browser、secrets、data、outputs、auth.json、填写后的 Cloud.txt、服务账号 JSON、运行日志或真实本机路径。README 已放在仓库根目录。
-6. 进入 Releases → Draft a new release，创建标签 `v0.3`，Target 选 main；复制 publish-text 中的标题和正文。上传 release-assets 中的 ZIP 与 `.sha256`。先 Save draft，检查附件名称和数量，再 Publish release。
-7. 从发布页面重新下载一次，核对 SHA256。公开前再检查首次提交的作者、邮箱和附件。授权选择见 LICENSING.md；如决定使用开源许可，使用公开署名添加 LICENSE，并保留第三方许可。
+验证：`python -B tools/check_public.py --manifest`、`python -B tools/check_licenses.py` 和 `tools/Check-Publish.ps1` 应通过。推送后检查 GitHub Actions 的 Public source checks；GitHub 应识别根目录 LICENSE。
 
-## 更新版本
+## 第二步：发布对应的修订附件
 
-使用新的干净导出目录；禁止打包登录后使用过的安装目录。更新版本号、README、发布说明和清单，审阅新文件与提交历史；公开附件也必须重新扫描，不能只依赖 `.gitignore`。本次提供的清单对应本次快照，不是后续任意修改的安全证明。
+在 Releases 创建新标签 `v0.3-license.1`，Target 选刚更新的 main。标题与正文使用 `publish-text/`。上传本材料 `release-assets/` 中的四个文件：
 
-官方说明：
-- https://docs.github.com/en/get-started/start-your-journey/uploading-a-project-to-github
-- https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
-- https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository
+1. `MultiGoogleCloud-Codex-0.3-github-windows-x64-license.1.zip`
+2. `MultiGoogleCloud-Codex-0.3-github-windows-x64-license.1.zip.sha256`
+3. `multigooglecloud-codex-portable-0.3-license.1-source.zip`
+4. `multigooglecloud-codex-portable-0.3-license.1-source.zip.sha256`
+
+新标签及附件实际存在后再发布。旧 Release 和旧标签保留；可在旧 Release 正文添加新许可修订版链接。不要只把 LICENSE 加到 main 就声称旧 ZIP 已更新。
+
+## 第三步：下载复核
+
+从新 Release 重新下载 ZIP，以 `Get-FileHash -Algorithm SHA256` 对照同页校验文件。便携包须能找到 LICENSE、LICENSING.md、THIRD-PARTY-NOTICES.md、THIRD-PARTY-INVENTORY.json、third_party/licenses/ 与 CORRESPONDING-SOURCE.md。
+
+完整对应源码 ZIP 直接解压后就是仓库根目录结构，包含点开头文件。源码仓库不提交运行时、登录数据、Release ZIP 或整个交付包。
+
+## 本次核对边界
+
+本次检查许可证、原文副本、公开文件完整性、语法、敏感信息模式及可重复打包，不代表运行时已升级、所有依赖已做漏洞审计或所有云端功能已重新测试。Python 两个项目保留的 Python 3.11.3 / OpenSSL 1.1.1t 需要单独安排运行时升级和兼容性测试。

@@ -58,3 +58,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\tools\Restore-Runtime.ps1 
 只更新程序文件，不覆盖自己的凭证、配置和历史。保存工作并完全退出 Codex 后，从原来的模式入口重新打开；启动器会认证并识别所属旧网关，再加载补丁，绝不结束未知进程。需要手动停止时先使用 `05-Stop-Gateways.cmd`。健康检查包含 `recovery_patch: 429-retry-3-6`。
 
 短暂限流可能通过重试恢复；持续配额不足不会因重试而解除。此次只做离线模拟/回归、公开文件扫描和可重复构建，无付费生成或第二台物理设备验收。
+
+## 许可证
+
+本项目维护者拥有或有权授权的代码使用 **GPL-3.0-only**，Copyright (c) 2026 Z5-Bit。详见 [LICENSE](LICENSE)、[授权范围](LICENSING.md) 和 [第三方声明](THIRD-PARTY-NOTICES.md)。
+
+本次许可修订标签为 `v0.3-license.1`；源码与便携附件应成对发布，见 [对应源码说明](CORRESPONDING-SOURCE.md)。

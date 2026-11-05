@@ -1,6 +1,8 @@
 {
-  "filename": "MultiGoogleCloud-Codex-0.3-github-windows-x64.zip",
+  "filename": "MultiGoogleCloud-Codex-0.3-github-windows-x64-license.1.zip",
   "folder": "MGC-Codex-0.3",
-  "sha256": "4e04fe433ee99dcfcd5f3bf6f6dd720d34d64dd4da71b590ba7a35a8da6049a2",
-  "recovery_patch": "429-retry-3-6"
+  "sha256": "c4dcc35d6a0debc810d664c04126d43cf34a5c769302eebc6c13e35ca3555882",
+  "recovery_patch": "429-retry-3-6",
+  "release_revision": "license.1",
+  "source_filename": "multigooglecloud-codex-portable-0.3-license.1-source.zip"
 }
